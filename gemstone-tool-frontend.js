@@ -55,9 +55,9 @@ module.exports = function () {
             {   name: "server", type: "boolean", def: false,
                 desc: "Enable HTTP server mode" },
             {   name: "env", type: "string", def: "development",
-                desc: "Build for target enviromment (\"production\" or \"development\")" },
+                desc: "Build for target environment (\"production\" or \"development\")" },
             {   name: "tag", type: "string", def: "",
-                desc: "Build for tagged enviromment (\"\")" }
+                desc: "Build for tagged environment (\"\")" }
         ],
         args: [
         ],
