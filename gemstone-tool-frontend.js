@@ -233,7 +233,8 @@ module.exports = function () {
 
                 /*  generate temporary Webpack configuration stub  */
                 let wpcFile = ".gemstone.webpack.js"
-                let wpcData = `module.exports = require("${gwcFile}")({\n` +
+                let gwcFileEsc = gwcFile.replace(/\\/g, "\\\\")
+                let wpcData = `module.exports = require("${gwcFileEsc}")({\n` +
                 `    verbose: ${opts.verbose},\n` +
                 `    env: "${opts.env}",\n` +
                 `    tag: "${opts.tag}"\n` +
