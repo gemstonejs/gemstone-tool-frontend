@@ -22,6 +22,7 @@ const gemstoneLinterJSON  = require("gemstone-linter-json")
 const Progress            = require("progress")
 const Chokidar            = require("chokidar")
 const beep                = require("beepbeep")
+const notifier            = require("node-notifier")
 
 /*  generate a table  */
 const mktable = (data, config = {}) => {
@@ -52,6 +53,8 @@ module.exports = function () {
                 desc: "Enable filesystem watching mode" },
             {   name: "beep", type: "boolean", def: false,
                 desc: "Beep terminal after build" },
+            {   name: "notify", type: "boolean", def: false,
+                desc: "Notify after error build" },
             {   name: "server", type: "boolean", def: false,
                 desc: "Enable HTTP server mode" },
             {   name: "env", type: "string", def: "development",
@@ -376,10 +379,19 @@ module.exports = function () {
                 if (passed)
                     passed = await Pass2()
                 if (opts.beep) {
+                    /*  beep notification  */
                     if (passed)
                         beep(1)
                     else
                         beep([ 0, 100, 500 ])
+                }
+                if (opts.notify && !passed) {
+                    /*  message notification  */
+                    notifier.notify({
+                        title:   "Gemstone Build Error",
+                        message: "Please check the Gemstone error output in your terminal",
+                        wait:    false
+                    })
                 }
             }
 
