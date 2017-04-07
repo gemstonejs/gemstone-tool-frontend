@@ -15,6 +15,7 @@ const table               = require("table")
 const codeFrame           = require("babel-code-frame")
 const pkg                 = require("./package.json")
 const gemstoneLinterJS    = require("gemstone-linter-js")
+const gemstoneLinterTS    = require("gemstone-linter-ts")
 const gemstoneLinterHTML  = require("gemstone-linter-html")
 const gemstoneLinterCSS   = require("gemstone-linter-css")
 const gemstoneLinterYAML  = require("gemstone-linter-yaml")
@@ -107,7 +108,7 @@ module.exports = function () {
                     complete:   chalk.bold.green("#"),
                     incomplete: "=",
                     width:      20,
-                    total:      5.0,
+                    total:      6.0,
                     stream:     process.stderr
                 })
                 let rounds = 0
@@ -140,6 +141,7 @@ module.exports = function () {
                     rounds++
                 }
                 await doLint("JS",   gemstoneLinterJS,   "eslint",    "*.js")
+                await doLint("TS",   gemstoneLinterTS,   "tslint",    "*.ts")
                 await doLint("HTML", gemstoneLinterHTML, "htmlhint",  "*.html")
                 await doLint("CSS",  gemstoneLinterCSS,  "stylelint", "*.css")
                 await doLint("YAML", gemstoneLinterYAML, "jsyaml",    "*.yaml")
@@ -167,6 +169,7 @@ module.exports = function () {
                     data.push([ ctx, files, findings ])
                 }
                 mkstat("JS")
+                mkstat("TS")
                 mkstat("HTML")
                 mkstat("CSS")
                 mkstat("YAML")
