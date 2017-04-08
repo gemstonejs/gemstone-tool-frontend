@@ -388,13 +388,20 @@ module.exports = function () {
                     else
                         beep([ 0, 100, 500 ])
                 }
-                if (opts.notify && !passed) {
+                if (opts.notify) {
                     /*  message notification  */
-                    notifier.notify({
-                        title:   "Gemstone Build Error",
-                        message: "Please check the Gemstone error output in your terminal",
-                        wait:    false
-                    })
+                    if (passed)
+                        notifier.notify({
+                            title:   "Gemstone Build: OK",
+                            message: "Please reload the application in your browser.",
+                            wait:    false
+                        })
+                    else
+                        notifier.notify({
+                            title:   "Gemstone Build: ERROR",
+                            message: "Please check the Gemstone error output in your terminal.",
+                            wait:    false
+                        })
                 }
             }
 
