@@ -104,8 +104,8 @@ module.exports = function () {
 
                 /*  lint source files  */
                 let progressCur = 0.0
-                let progressBar = new Progress(`   linting: [:bar] ${chalk.bold(":percent")} (elapsed: :elapseds) :msg `, {
-                    complete:   chalk.bold.green("#"),
+                let progressBar = new Progress(`   linting: [${chalk.green(":bar")}] ${chalk.bold(":percent")} (elapsed: :elapseds) :msg `, {
+                    complete:   "#",
                     incomplete: "=",
                     width:      20,
                     total:      6.0,
