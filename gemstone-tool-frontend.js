@@ -266,7 +266,7 @@ module.exports = function () {
                         }
                         catch (ex) {
                             process.stderr.write(`ERROR: failed to parse JSON output of Webpack:\n${stdout}`)
-                            reject(stdout)
+                            reject(new Error(`failed to parse JSON output of Webpack:\n${stdout}`))
                         }
                         if (code === 0)
                             resolve(stats)
