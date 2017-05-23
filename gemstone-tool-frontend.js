@@ -5,7 +5,7 @@
 */
 
 /*  external requirements  */
-const fs                  = require("fs-promise")
+const fs                  = require("mz/fs")
 const path                = require("path")
 const gemstoneConfig      = require("gemstone-config")
 const spawn               = require("child_process").spawn
