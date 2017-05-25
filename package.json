@@ -24,7 +24,7 @@
         "eslint-config-standard":           "~10.2.1",
         "eslint-plugin-standard":           "~3.0.1",
         "eslint-plugin-promise":            "~3.5.0",
-        "eslint-plugin-import":             "~2.2.0",
+        "eslint-plugin-import":             "~2.3.0",
         "eslint-plugin-node":               "~4.2.2",
         "babel-eslint":                     "~7.2.3"
     },
@@ -39,7 +39,7 @@
         "glob-promise":                     "~3.1.0",
         "beepbeep":                         "~1.2.1",
         "node-notifier":                    "~5.1.2",
-        "webpack":                          "~2.6.0",
+        "webpack":                          "~2.6.1",
         "gemstone-config":                  "~0.9.11",
         "gemstone-linter-js":               "~0.9.3",
         "gemstone-linter-ts":               "~0.9.7",
@@ -47,7 +47,7 @@
         "gemstone-linter-css":              "~0.9.5",
         "gemstone-linter-yaml":             "~0.9.4",
         "gemstone-linter-json":             "~0.9.4",
-        "gemstone-config-webpack":          "~0.9.18"
+        "gemstone-config-webpack":          "~0.9.19"
     },
     "peerDependencies": {
         "gemstone-tool":                    "~0.9.13"
