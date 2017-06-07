@@ -42,12 +42,12 @@
         "webpack":                          "~2.6.1",
         "gemstone-config":                  "~0.9.13",
         "gemstone-linter-js":               "~0.9.5",
-        "gemstone-linter-ts":               "~0.9.9",
+        "gemstone-linter-ts":               "~0.9.11",
         "gemstone-linter-html":             "~0.9.6",
         "gemstone-linter-css":              "~0.9.8",
         "gemstone-linter-yaml":             "~0.9.6",
         "gemstone-linter-json":             "~0.9.6",
-        "gemstone-config-webpack":          "~0.9.22"
+        "gemstone-config-webpack":          "~0.9.23"
     },
     "peerDependencies": {
         "gemstone-tool":                    "~0.9.15"
