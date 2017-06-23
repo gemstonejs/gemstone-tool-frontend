@@ -50,7 +50,7 @@
         "gemstone-config-webpack":          "~0.9.29"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "~0.9.17"
+        "gemstone-tool":                    "~0.9.18"
     },
     "scripts": {
         "prepublish": "eslint --config eslint.yaml gemstone-tool-frontend.js"
