@@ -40,14 +40,14 @@
         "beepbeep":                         "~1.2.1",
         "node-notifier":                    "~5.1.2",
         "webpack":                          "~3.4.1",
-        "gemstone-config":                  "~0.9.21",
+        "gemstone-config":                  "~0.9.22",
         "gemstone-linter-js":               "~0.9.13",
         "gemstone-linter-ts":               "~0.9.18",
         "gemstone-linter-html":             "~0.9.14",
-        "gemstone-linter-css":              "~0.9.18",
-        "gemstone-linter-yaml":             "~0.9.12",
+        "gemstone-linter-css":              "~0.9.19",
+        "gemstone-linter-yaml":             "~0.9.13",
         "gemstone-linter-json":             "~0.9.12",
-        "gemstone-config-webpack":          "~0.9.35"
+        "gemstone-config-webpack":          "~0.9.36"
     },
     "peerDependencies": {
         "gemstone-tool":                    "~0.9.23"
