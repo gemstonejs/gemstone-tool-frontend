@@ -47,7 +47,7 @@
         "gemstone-linter-css":              "~0.9.21",
         "gemstone-linter-yaml":             "~0.9.15",
         "gemstone-linter-json":             "~0.9.14",
-        "gemstone-config-webpack":          "~0.9.40"
+        "gemstone-config-webpack":          "~0.9.41"
     },
     "peerDependencies": {
         "gemstone-tool":                    "~0.9.25"
