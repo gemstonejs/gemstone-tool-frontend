@@ -250,7 +250,7 @@ module.exports = function () {
                 /*  spawn Webpack command-line interface  */
                 let stats = await new Promise((resolve, reject) => {
                     process.stderr.write("-- executing bundler with Gemstone configuration\n")
-                    let wpOpts = [ webpackCli, "--config", wpcFile, "--json" ]
+                    let wpOpts = [ webpackCli, "--config", wpcFile, "--bail", "--json" ]
                     if (opts.debug)
                         wpOpts.push("--debug")
                     let child = spawn(nodeExe, wpOpts, { stdio: [ "inherit", "pipe", "inherit" ] })
