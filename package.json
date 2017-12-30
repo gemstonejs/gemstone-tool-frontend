@@ -20,13 +20,13 @@
         "url":  "http://github.com/gemstonejs/gemstone-tool-frontend/issues"
     },
     "devDependencies": {
-        "eslint":                           "~4.13.1",
+        "eslint":                           "~4.14.0",
         "eslint-config-standard":           "~10.2.1",
         "eslint-plugin-standard":           "~3.0.1",
         "eslint-plugin-promise":            "~3.6.0",
         "eslint-plugin-import":             "~2.8.0",
         "eslint-plugin-node":               "~5.2.1",
-        "babel-eslint":                     "~8.0.3"
+        "babel-eslint":                     "~8.1.2"
     },
     "dependencies": {
         "mz":                               "~2.7.0",
@@ -34,20 +34,20 @@
         "babel-code-frame":                 "~6.26.0",
         "table":                            "~4.0.2",
         "progress":                         "~2.0.0",
-        "chokidar":                         "~1.7.0",
+        "chokidar":                         "~2.0.0",
         "glob":                             "~7.1.2",
         "glob-promise":                     "~3.3.0",
         "beepbeep":                         "~1.2.1",
         "node-notifier":                    "~5.1.2",
         "webpack":                          "~3.10.0",
-        "gemstone-config":                  "~0.9.24",
-        "gemstone-linter-js":               "~0.9.15",
-        "gemstone-linter-ts":               "~0.9.20",
-        "gemstone-linter-html":             "~0.9.16",
-        "gemstone-linter-css":              "~0.9.21",
-        "gemstone-linter-yaml":             "~0.9.15",
-        "gemstone-linter-json":             "~0.9.14",
-        "gemstone-config-webpack":          "~0.9.41"
+        "gemstone-config":                  "~0.9.25",
+        "gemstone-linter-js":               "~0.9.16",
+        "gemstone-linter-ts":               "~0.9.21",
+        "gemstone-linter-html":             "~0.9.17",
+        "gemstone-linter-css":              "~0.9.22",
+        "gemstone-linter-yaml":             "~0.9.16",
+        "gemstone-linter-json":             "~0.9.15",
+        "gemstone-config-webpack":          "~0.9.42"
     },
     "peerDependencies": {
         "gemstone-tool":                    "~0.9.25"
