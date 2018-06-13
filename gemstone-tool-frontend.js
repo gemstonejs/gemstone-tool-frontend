@@ -85,7 +85,7 @@ module.exports = function () {
             let nodeExe = process.execPath
 
             /*  locate Webpack CLI  */
-            let webpackCli = require.resolve("webpack-cli/bin/webpack.js")
+            let webpackCli = require.resolve("webpack-cli/bin/cli.js")
 
             /*  locate Webpack configuration generator  */
             let gwcFile = require.resolve("gemstone-config-webpack")
