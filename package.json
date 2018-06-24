@@ -26,7 +26,7 @@
         "eslint-plugin-promise":            "3.8.0",
         "eslint-plugin-import":             "2.12.0",
         "eslint-plugin-node":               "6.0.1",
-        "babel-eslint":                     "8.2.3"
+        "babel-eslint":                     "8.2.5"
     },
     "dependencies": {
         "mz":                               "2.7.0",
@@ -34,24 +34,24 @@
         "babel-code-frame":                 "6.26.0",
         "table":                            "4.0.3",
         "progress":                         "2.0.0",
-        "chokidar":                         "2.0.3",
+        "chokidar":                         "2.0.4",
         "glob":                             "7.1.2",
         "glob-promise":                     "3.4.0",
         "beepbeep":                         "1.2.2",
         "node-notifier":                    "5.2.1",
-        "webpack-cli":                      "3.0.4",
-        "webpack":                          "4.12.0",
-        "gemstone-config":                  "0.9.37",
-        "gemstone-linter-js":               "0.9.25",
-        "gemstone-linter-ts":               "0.9.31",
-        "gemstone-linter-html":             "0.9.26",
-        "gemstone-linter-css":              "0.9.30",
-        "gemstone-linter-yaml":             "0.9.25",
-        "gemstone-linter-json":             "0.9.23",
-        "gemstone-config-webpack":          "0.9.72"
+        "webpack-cli":                      "3.0.8",
+        "webpack":                          "4.12.1",
+        "gemstone-config":                  "0.9.38",
+        "gemstone-linter-js":               "0.9.26",
+        "gemstone-linter-ts":               "0.9.32",
+        "gemstone-linter-html":             "0.9.27",
+        "gemstone-linter-css":              "0.9.31",
+        "gemstone-linter-yaml":             "0.9.26",
+        "gemstone-linter-json":             "0.9.24",
+        "gemstone-config-webpack":          "0.9.73"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "0.9.38"
+        "gemstone-tool":                    "0.9.39"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml gemstone-tool-frontend.js"
