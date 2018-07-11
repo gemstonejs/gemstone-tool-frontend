@@ -449,7 +449,7 @@ module.exports = function () {
 
                     /*  watch filesystem  */
                     let watcher = Chokidar.watch(cfg.path.source, {
-                        ignored: /[/\\]\./,
+                        ignored: /(?:[/\\]\.|\.(sw[px])$|~$|\.subl.*?\.tmp|___jb_tmp___$)/,
                         ignorePermissionErrors: true,
                         ignoreInitial: true,
                         awaitWriteFinish: {
