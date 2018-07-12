@@ -48,10 +48,10 @@
         "gemstone-linter-css":              "0.9.32",
         "gemstone-linter-yaml":             "0.9.27",
         "gemstone-linter-json":             "0.9.25",
-        "gemstone-config-webpack":          "0.9.76"
+        "gemstone-config-webpack":          "0.9.77"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "0.9.40"
+        "gemstone-tool":                    "0.9.41"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml gemstone-tool-frontend.js"
