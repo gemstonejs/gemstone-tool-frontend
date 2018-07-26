@@ -25,7 +25,7 @@
         "eslint-plugin-standard":           "3.1.0",
         "eslint-plugin-promise":            "3.8.0",
         "eslint-plugin-import":             "2.13.0",
-        "eslint-plugin-node":               "6.0.1",
+        "eslint-plugin-node":               "7.0.1",
         "babel-eslint":                     "8.2.6"
     },
     "dependencies": {
@@ -39,19 +39,19 @@
         "glob-promise":                     "3.4.0",
         "beepbeep":                         "1.2.2",
         "node-notifier":                    "5.2.1",
-        "webpack-cli":                      "3.0.8",
-        "webpack":                          "4.16.1",
-        "gemstone-config":                  "0.9.39",
-        "gemstone-linter-js":               "0.9.27",
-        "gemstone-linter-ts":               "0.9.33",
-        "gemstone-linter-html":             "0.9.28",
-        "gemstone-linter-css":              "0.9.32",
-        "gemstone-linter-yaml":             "0.9.27",
-        "gemstone-linter-json":             "0.9.25",
-        "gemstone-config-webpack":          "0.9.79"
+        "webpack-cli":                      "3.1.0",
+        "webpack":                          "4.16.2",
+        "gemstone-config":                  "0.9.40",
+        "gemstone-linter-js":               "0.9.28",
+        "gemstone-linter-ts":               "0.9.34",
+        "gemstone-linter-html":             "0.9.29",
+        "gemstone-linter-css":              "0.9.33",
+        "gemstone-linter-yaml":             "0.9.28",
+        "gemstone-linter-json":             "0.9.26",
+        "gemstone-config-webpack":          "0.9.80"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "0.9.41"
+        "gemstone-tool":                    "0.9.42"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml gemstone-tool-frontend.js"
