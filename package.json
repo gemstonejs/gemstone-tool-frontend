@@ -40,7 +40,7 @@
         "beepbeep":                         "1.2.2",
         "node-notifier":                    "5.2.1",
         "webpack-cli":                      "3.1.0",
-        "webpack":                          "4.16.2",
+        "webpack":                          "4.16.3",
         "gemstone-config":                  "0.9.40",
         "gemstone-linter-js":               "0.9.28",
         "gemstone-linter-ts":               "0.9.34",
@@ -48,7 +48,7 @@
         "gemstone-linter-css":              "0.9.33",
         "gemstone-linter-yaml":             "0.9.28",
         "gemstone-linter-json":             "0.9.26",
-        "gemstone-config-webpack":          "0.9.80"
+        "gemstone-config-webpack":          "0.9.81"
     },
     "peerDependencies": {
         "gemstone-tool":                    "0.9.42"
