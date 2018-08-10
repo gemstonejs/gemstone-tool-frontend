@@ -40,18 +40,18 @@
         "beepbeep":                         "1.2.2",
         "node-notifier":                    "5.2.1",
         "webpack-cli":                      "3.1.0",
-        "webpack":                          "4.16.3",
-        "gemstone-config":                  "0.9.40",
+        "webpack":                          "4.16.5",
+        "gemstone-config":                  "0.9.41",
         "gemstone-linter-js":               "0.9.28",
-        "gemstone-linter-ts":               "0.9.34",
+        "gemstone-linter-ts":               "0.9.35",
         "gemstone-linter-html":             "0.9.29",
-        "gemstone-linter-css":              "0.9.33",
+        "gemstone-linter-css":              "0.9.34",
         "gemstone-linter-yaml":             "0.9.28",
         "gemstone-linter-json":             "0.9.26",
-        "gemstone-config-webpack":          "0.9.81"
+        "gemstone-config-webpack":          "0.9.82"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "0.9.42"
+        "gemstone-tool":                    "0.9.43"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml gemstone-tool-frontend.js"
