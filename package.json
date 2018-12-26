@@ -45,13 +45,16 @@
         "gemstone-linter-js":               "0.9.29",
         "gemstone-linter-ts":               "0.9.35",
         "gemstone-linter-html":             "0.9.30",
-        "gemstone-linter-css":              "0.9.36",
+        "gemstone-linter-css":              "0.9.37",
         "gemstone-linter-yaml":             "0.9.28",
         "gemstone-linter-json":             "0.9.26",
         "gemstone-config-webpack":          "0.9.83"
     },
     "peerDependencies": {
         "gemstone-tool":                    "0.9.44"
+    },
+    "engines": {
+        "node":                             ">=8.0.0"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml gemstone-tool-frontend.js"
