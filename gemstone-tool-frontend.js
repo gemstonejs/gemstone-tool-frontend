@@ -5,25 +5,25 @@
 */
 
 /*  external requirements  */
-const fs                  = require("mz/fs")
-const path                = require("path")
-const gemstoneConfig      = require("gemstone-config")
-const spawn               = require("child_process").spawn
-const glob                = require("glob-promise")
-const chalk               = require("chalk")
-const table               = require("table")
-const codeFrame           = require("babel-code-frame")
-const pkg                 = require("./package.json")
-const gemstoneLinterJS    = require("gemstone-linter-js")
-const gemstoneLinterTS    = require("gemstone-linter-ts")
-const gemstoneLinterHTML  = require("gemstone-linter-html")
-const gemstoneLinterCSS   = require("gemstone-linter-css")
-const gemstoneLinterYAML  = require("gemstone-linter-yaml")
-const gemstoneLinterJSON  = require("gemstone-linter-json")
-const Progress            = require("progress")
-const Chokidar            = require("chokidar")
-const beep                = require("beepbeep")
-const notifier            = require("node-notifier")
+const fs                   = require("mz/fs")
+const path                 = require("path")
+const gemstoneConfig       = require("gemstone-config")
+const spawn                = require("child_process").spawn
+const glob                 = require("glob-promise")
+const chalk                = require("chalk")
+const table                = require("table")
+const { codeFrameColumns } = require("@babel/code-frame")
+const pkg                  = require("./package.json")
+const gemstoneLinterJS     = require("gemstone-linter-js")
+const gemstoneLinterTS     = require("gemstone-linter-ts")
+const gemstoneLinterHTML   = require("gemstone-linter-html")
+const gemstoneLinterCSS    = require("gemstone-linter-css")
+const gemstoneLinterYAML   = require("gemstone-linter-yaml")
+const gemstoneLinterJSON   = require("gemstone-linter-json")
+const Progress             = require("progress")
+const Chokidar             = require("chokidar")
+const beep                 = require("beepbeep")
+const notifier             = require("node-notifier")
 
 /*  generate a table  */
 const mktable = (data, config = {}) => {
@@ -198,13 +198,10 @@ module.exports = function () {
                         let column   = finding.column
                         let message  = finding.message
                         let origin   = `[${finding.ruleProc}: ${finding.ruleId}]`
-                        let frame = codeFrame(
+                        let frame = codeFrameColumns(
                             report.sources[finding.filename] || "",
-                            finding.line,
-                            finding.column, {
-                                linesAbove: 2,
-                                linesBelow: 2
-                            }
+                            { start: { line: finding.line, column: finding.column } },
+                            { linesAbove: 2, linesBelow: 2 }
                         )
                         frame = frame
                             .replace(/^(\s*\d+\s+\|)/, (_, m1) =>
