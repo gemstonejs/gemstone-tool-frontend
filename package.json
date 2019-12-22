@@ -42,7 +42,7 @@
         "webpack-cli":                      "3.3.10",
         "webpack":                          "4.41.4",
         "gemstone-config":                  "0.9.47",
-        "gemstone-linter-js":               "0.9.34",
+        "gemstone-linter-js":               "0.9.35",
         "gemstone-linter-ts":               "0.9.38",
         "gemstone-linter-html":             "0.9.35",
         "gemstone-linter-css":              "0.9.42",
