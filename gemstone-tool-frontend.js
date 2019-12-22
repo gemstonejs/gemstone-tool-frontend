@@ -27,7 +27,7 @@ const notifier             = require("node-notifier")
 
 /*  generate a table  */
 const mktable = (data, config = {}) => {
-    let cfg = Object.assign({}, {
+    const cfg = Object.assign({}, {
         border: table.getBorderCharacters("void"),
         columnDefault: { paddingLeft: 0, paddingRight: 1 },
         drawJoin: () => false,
@@ -71,7 +71,7 @@ module.exports = function () {
                 throw new Error(`invalid environment "${opts.env}"`)
 
             /*  display header  */
-            let header = `${chalk.bold("** Gemstone Frontend Build Tool " + pkg.version)}\n` +
+            const header = `${chalk.bold("** Gemstone Frontend Build Tool " + pkg.version)}\n` +
                 "** Copyright (c) 2016-2019 Gemstone Project <http://gemstonejs.com>\n" +
                 "** Licensed under Apache License 2.0 <https://spdx.org/licenses/Apache-2.0>\n" +
                 "\n"
@@ -82,16 +82,16 @@ module.exports = function () {
                 process.chdir(opts.cwd)
 
             /*  locate Node executable  */
-            let nodeExe = process.execPath
+            const nodeExe = process.execPath
 
             /*  locate Webpack CLI  */
-            let webpackCli = require.resolve("webpack-cli/bin/cli.js")
+            const webpackCli = require.resolve("webpack-cli/bin/cli.js")
 
             /*  locate Webpack configuration generator  */
-            let gwcFile = require.resolve("gemstone-config-webpack")
+            const gwcFile = require.resolve("gemstone-config-webpack")
 
             /*  determine Gemstone configuration  */
-            let cfg = gemstoneConfig()
+            const cfg = gemstoneConfig()
 
             /*
              *  PASS 1: Linting
@@ -104,7 +104,7 @@ module.exports = function () {
 
                 /*  lint source files  */
                 let progressCur = 0.0
-                let progressBar = new Progress(`   linting: [${chalk.green(":bar")}] ${chalk.bold(":percent")} (elapsed: :elapseds) :msg `, {
+                const progressBar = new Progress(`   linting: [${chalk.green(":bar")}] ${chalk.bold(":percent")} (elapsed: :elapseds) :msg `, {
                     complete:   "#",
                     incomplete: "=",
                     width:      20,
@@ -112,7 +112,7 @@ module.exports = function () {
                     stream:     process.stderr
                 })
                 let rounds = 0
-                let options = {
+                const options = {
                     verbose:  opts.verbose,
                     env:      opts.env,
                     colors:   process.stderr.isTTY,
@@ -120,19 +120,19 @@ module.exports = function () {
                     progress: (fraction, msg) => {
                         if (msg.length > 40)
                             msg = msg.substr(0, 40) + "..."
-                        let delta = ((rounds * 1.0) + fraction) - progressCur
+                        const delta = ((rounds * 1.0) + fraction) - progressCur
                         progressBar.tick(delta, { msg })
                         if (progressBar.complete)
                             process.stderr.write("\n")
                         progressCur += delta
                     }
                 }
-                let report = {
+                const report = {
                     sources:  {},
                     findings: []
                 }
                 let passed = true
-                let filenames = {}
+                const filenames = {}
                 const doLint = async (ctx, linter, proc, ext) => {
                     filenames[ctx] = await glob(path.join(cfg.path.source, "**", ext))
                     passed &= await linter(filenames[ctx],
@@ -148,13 +148,13 @@ module.exports = function () {
                 await doLint("JSON", gemstoneLinterJSON, "jsonlint",  "*.json")
 
                 /*  report linting results  */
-                let data = [ [
+                const data = [ [
                     chalk.underline("Source Type"),
                     chalk.underline("Files"),
                     chalk.underline("Findings")
                 ] ]
                 const mkstat = (ctx) => {
-                    let files = filenames[ctx].length
+                    const files = filenames[ctx].length
                     let findings = report.findings
                         .filter((finding) => finding.ctx === ctx)
                         .length
@@ -189,15 +189,15 @@ module.exports = function () {
                         return diff
                     })
                     .forEach((finding) => {
-                        let ctx      = `[${finding.ctx}]`
-                        let dirname  = path.dirname(finding.filename)
+                        const ctx = `[${finding.ctx}]`
+                        let dirname = path.dirname(finding.filename)
                         if (dirname !== "")
                             dirname += "/"
-                        let basename = path.basename(finding.filename)
-                        let line     = finding.line
-                        let column   = finding.column
-                        let message  = finding.message
-                        let origin   = `[${finding.ruleProc}: ${finding.ruleId}]`
+                        const basename = path.basename(finding.filename)
+                        const line     = finding.line
+                        const column   = finding.column
+                        const message  = finding.message
+                        const origin   = `[${finding.ruleProc}: ${finding.ruleId}]`
                         let frame = codeFrameColumns(
                             report.sources[finding.filename] || "",
                             { start: { line: finding.line, column: finding.column } },
@@ -212,7 +212,7 @@ module.exports = function () {
                                 chalk.grey(m1) + chalk.bold.red(m2))
                             .replace(/(\n)(>)(\s*\d+\s+\|)(.*)/, (_, m1, m2, m3, m4) =>
                                 m1 + chalk.bold.red(m2) + chalk.grey(m3) + chalk.green(m4))
-                        let output =
+                        const output =
                             `${chalk.bold.red("ERROR:")} ` +
                             `${chalk.red("file")} ${chalk.red(dirname)}${chalk.red.bold(basename)}` +
                             `${chalk.red(", line ")}${chalk.red.bold(line)}${chalk.red(", column ")}${chalk.red.bold(column)}${chalk.red("")} ` +
@@ -235,9 +235,9 @@ module.exports = function () {
                 process.stderr.write(`-- using configuration for ${chalk.bold.green(opts.env)} environment\n`)
 
                 /*  generate temporary Webpack configuration stub  */
-                let wpcFile = ".gemstone.webpack.js"
-                let gwcFileEsc = gwcFile.replace(/\\/g, "\\\\")
-                let wpcData = `module.exports = require("${gwcFileEsc}")({\n` +
+                const wpcFile = ".gemstone.webpack.js"
+                const gwcFileEsc = gwcFile.replace(/\\/g, "\\\\")
+                const wpcData = `module.exports = require("${gwcFileEsc}")({\n` +
                 `    verbose: ${opts.verbose},\n` +
                 `    env: "${opts.env}",\n` +
                 `    tag: "${opts.tag}"\n` +
@@ -245,12 +245,12 @@ module.exports = function () {
                 await fs.writeFile(wpcFile, wpcData, { encoding: "utf8" })
 
                 /*  spawn Webpack command-line interface  */
-                let stats = await new Promise((resolve, reject) => {
+                const stats = await new Promise((resolve, reject) => {
                     process.stderr.write("-- executing bundler with Gemstone configuration\n")
-                    let wpOpts = [ webpackCli, "--config", wpcFile, "--bail", "--json" ]
+                    const wpOpts = [ webpackCli, "--config", wpcFile, "--bail", "--json" ]
                     if (opts.debug)
                         wpOpts.push("--debug")
-                    let child = spawn(nodeExe, wpOpts, { stdio: [ "inherit", "pipe", "inherit" ] })
+                    const child = spawn(nodeExe, wpOpts, { stdio: [ "inherit", "pipe", "inherit" ] })
                     let stdout = ""
                     child.stdout.on("data", async (data) => {
                         stdout += data.toString()
@@ -275,13 +275,13 @@ module.exports = function () {
 
                 /*  report Webpack on entries  */
                 if (stats.errors.length === 0) {
-                    let data = [ [
+                    const data = [ [
                         chalk.underline("Entry"),
                         chalk.underline("Chunks"),
                         chalk.underline("Assets")
                     ] ]
                     Object.keys(stats.entrypoints).forEach((name) => {
-                        let entry = stats.entrypoints[name]
+                        const entry = stats.entrypoints[name]
                         data.push([
                             chalk.bold(name),
                             entry.chunks.map((chunk) => chalk.green(chunk)).join(", "),
@@ -294,7 +294,7 @@ module.exports = function () {
 
                 /*  report on Webpack chunks  */
                 if (stats.errors.length === 0) {
-                    let data = [ [
+                    const data = [ [
                         chalk.underline("Chunk"),
                         chalk.underline("Parents"),
                         chalk.underline("Names"),
@@ -302,7 +302,7 @@ module.exports = function () {
                         chalk.underline("Modules")
                     ] ]
                     Object.keys(stats.chunks).forEach((name) => {
-                        let chunk = stats.chunks[name]
+                        const chunk = stats.chunks[name]
                         data.push([
                             chalk.green(chunk.id),
                             chunk.parents.map((chunk) => chalk.green(chunk)).join(", "),
@@ -317,7 +317,7 @@ module.exports = function () {
 
                 /*  report on Webpack modules  */
                 if (stats.errors.length === 0) {
-                    let data = [ [
+                    const data = [ [
                         chalk.underline("Module"),
                         chalk.underline("Size"),
                         chalk.underline("Chunks"),
@@ -445,7 +445,7 @@ module.exports = function () {
                     }
 
                     /*  watch filesystem  */
-                    let watcher = Chokidar.watch(cfg.path.source, {
+                    const watcher = Chokidar.watch(cfg.path.source, {
                         ignored: /(?:[/\\]\.|\.(sw[px])$|~$|\.subl.*?\.tmp|___jb_tmp___$)/,
                         ignorePermissionErrors: true,
                         ignoreInitial: true,
