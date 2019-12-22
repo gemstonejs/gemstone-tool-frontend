@@ -51,7 +51,7 @@
         "gemstone-config-webpack":          "0.9.85"
     },
     "peerDependencies": {
-        "gemstone-tool":                    "0.9.45"
+        "gemstone-tool":                    "0.9.46"
     },
     "engines": {
         "node":                             ">=8.0.0"
